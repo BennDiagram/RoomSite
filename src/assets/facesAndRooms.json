@@ -1,0 +1,122 @@
+{
+    "andy": {
+        "personName": "Andy",
+        "personImage": "Andy2.JPG",
+        "roomImage": "Andy.JPG",
+        "about": "This text can be modified in src/assets/facesAndRooms.json. The images have to be added to public/faces or public/rooms"
+    },
+    "anna": {
+        "personName": "Anna",
+        "personImage": "Anna.JPG",
+        "roomImage": "Anna.JPG",
+        "about": "This text can be modified in src/assets/facesAndRooms.json. The images have to be added to public/faces or public/rooms"
+    },
+    "baxter": {
+        "personName": "Baxter",
+        "personImage": "Baxter.JPG",
+        "roomImage": "BaxterLight.JPG",
+        "about": "This text can be modified in src/assets/facesAndRooms.json. The images have to be added to public/faces or public/rooms"
+    },
+    "clayton": {
+        "personName": "Clayton",
+        "personImage": "Clayton.JPG",
+        "roomImage": "ClaytonLight.JPG",
+        "about": "This text can be modified in src/assets/facesAndRooms.json. The images have to be added to public/faces or public/rooms"
+    },
+    "eric": {
+        "personName": "Eric",
+        "personImage": "Eric.JPG",
+        "roomImage": "Eric.JPG",
+        "about": "This text can be modified in src/assets/facesAndRooms.json. The images have to be added to public/faces or public/rooms"
+    },
+    "gavin": {
+        "personName": "Gavin",
+        "personImage": "Gavin.JPG",
+        "roomImage": "Gavin.JPG",
+        "about": "This text can be modified in src/assets/facesAndRooms.json. The images have to be added to public/faces or public/rooms"
+    },
+    "holly": {
+        "personName": "Holly",
+        "personImage": "Holly.JPG",
+        "roomImage": "Holly.JPG",
+        "about": "This text can be modified in src/assets/facesAndRooms.json. The images have to be added to public/faces or public/rooms"
+    },
+    "jack": {
+        "personName": "Jack",
+        "personImage": "Jack.JPG",
+        "roomImage": "Jack.JPG",
+        "about": "This text can be modified in src/assets/facesAndRooms.json. The images have to be added to public/faces or public/rooms"
+    },
+    "luna": {
+        "personName": "Luna",
+        "personImage": "Luna.JPG",
+        "roomImage": "Luna.JPG",
+        "about": "This text can be modified in src/assets/facesAndRooms.json. The images have to be added to public/faces or public/rooms"
+    },
+    "marley": {
+        "personName": "Marley",
+        "personImage": "Marley.JPG",
+        "roomImage": "Marley.JPG",
+        "about": "This text can be modified in src/assets/facesAndRooms.json. The images have to be added to public/faces or public/rooms"
+    },
+    "nigel": {
+        "personName": "Nigel",
+        "personImage": "Nigel.JPG",
+        "roomImage": "Nigel.JPG",
+        "about": "This text can be modified in src/assets/facesAndRooms.json. The images have to be added to public/faces or public/rooms"
+    },
+    "noah": {
+        "personName": "Noah",
+        "personImage": "Noah.JPG",
+        "roomImage": "Noah.JPG",
+        "about": "This text can be modified in src/assets/facesAndRooms.json. The images have to be added to public/faces or public/rooms"
+    },
+    "oliver": {
+        "personName": "Oliver",
+        "personImage": "Oliver.JPG",
+        "roomImage": "Oliver.JPG",
+        "about": "This text can be modified in src/assets/facesAndRooms.json. The images have to be added to public/faces or public/rooms"
+    },
+    "pete": {
+        "personName": "Pete",
+        "personImage": "Pete.JPG",
+        "roomImage": "Pete.JPG",
+        "about": "This text can be modified in src/assets/facesAndRooms.json. The images have to be added to public/faces or public/rooms"
+    },
+    "rileyMeghan": {
+        "personName": "Riley and Meghan",
+        "personImage": "Riley_Meghan.JPG",
+        "roomImage": "RileyMeghan.JPG",
+        "about": "This text can be modified in src/assets/facesAndRooms.json. The images have to be added to public/faces or public/rooms"
+    },
+    "roland": {
+        "personName": "Roland",
+        "personImage": "Roland.JPG",
+        "roomImage": "Roland.JPG",
+        "about": "This text can be modified in src/assets/facesAndRooms.json. The images have to be added to public/faces or public/rooms"
+    },
+    "salem": {
+        "personName": "Salem",
+        "personImage": "Salem.JPG",
+        "roomImage": "Salem.JPG",
+        "about": "This text can be modified in src/assets/facesAndRooms.json. The images have to be added to public/faces or public/rooms"
+    },
+    "sam": {
+        "personName": "Sam",
+        "personImage": "Sam.JPG",
+        "roomImage": "Sam.JPG",
+        "about": "This text can be modified in src/assets/facesAndRooms.json. The images have to be added to public/faces or public/rooms"
+    },
+    "bathroomTime": {
+        "personName": "Bathroom Time",
+        "personImage": "P1000208.JPG",
+        "roomImage": "V2660323.JPG",
+        "about": "This text can be modified in src/assets/facesAndRooms.json. The images have to be added to public/faces or public/rooms"
+    },
+    "bathroomTime2": {
+        "personName": "Bathroom Time 2",
+        "personImage": "P1000234.JPG",
+        "roomImage": "V2670324.JPG",
+        "about": "This text can be modified in src/assets/facesAndRooms.json. The images have to be added to public/faces or public/rooms"
+    }
+}

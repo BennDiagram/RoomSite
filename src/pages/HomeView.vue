@@ -9,36 +9,45 @@
             </div>
             <div v-if="mode === 'interactive'">Score: TODO/TODO</div>
         </div>
-        <div class="about">{{ peopleAndRooms[currentPersonKey].about }}</div>
-        <div class="peopleAndRoom">
-            <div class="people">
-                <div class="person" v-for="(person, key) in peopleAndRooms">
-                    <img :src="'/people/' + person.personImage" class="personImage" @click="personClicked(key)"
+        <div class="about">{{ facesAndRooms[currentPersonKey].about }}</div>
+        <div class="facesAndRoom">
+            <div class="faces">
+                <div class="person" v-for="(person, key) in facesAndRooms">
+                    <img :src="'/faces/' + person.personImage" class="personImage" @click="personClicked(key)"
                         :class="{ 'current': key === currentPersonKey }" />
                     <div class="personName">{{ person.personName }}</div>
                 </div>
             </div>
-            <div class="room">
-                <img :src="'/rooms/' + peopleAndRooms[currentPersonKey].roomImage" class="roomImage" />
-                <div class="roomName">{{ peopleAndRooms[currentPersonKey].roomName }}</div>
+            <div class="roomImageContainer">
+                <div class="viewerWrapper">
+                    <div id="viewer"></div>
+                </div>
+                <div>{{ facesAndRooms[currentPersonKey].personName }}'s Room</div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import peopleAndRooms from '../assets/peopleAndRooms.json'
+import '@photo-sphere-viewer/core/index.css';
+import facesAndRooms from '../assets/facesAndRooms.json'
+import { Viewer } from '@photo-sphere-viewer/core';
 
 export default {
     data() {
         return {
-            peopleAndRooms: peopleAndRooms,
+            facesAndRooms: facesAndRooms,
             mode: 'exhibit',
-            currentPersonKey: (Object.keys(peopleAndRooms)[0]) ? Object.keys(peopleAndRooms)[0] : null
+            currentPersonKey: (Object.keys(facesAndRooms)[0]) ? Object.keys(facesAndRooms)[0] : null,
+            viewer: null
         }
     },
     mounted() {
-        console.dir(peopleAndRooms);
+        console.dir(facesAndRooms);
+        this.viewer = new Viewer({
+            container: document.querySelector('#viewer'),
+            panorama: '/rooms/' + this.facesAndRooms[this.currentPersonKey].roomImage,
+        });
     },
     methods: {
         startInteractiveMode() {
@@ -49,6 +58,9 @@ export default {
         },
         personClicked(key) {
             this.currentPersonKey = key;
+            if (this.viewer) {
+                this.viewer.setPanorama('/rooms/' + this.facesAndRooms[key].roomImage);
+            }
         }
     }
 }
@@ -59,7 +71,8 @@ export default {
     height: 100%;
     width: 100%;
     background: black;
-    color: white
+    color: white;
+    overflow-y: auto;
 }
 
 .topBar {
@@ -71,17 +84,20 @@ button.selectedMode {
     border: 5px solid green;
 }
 
-.peopleAndRoom {
+.facesAndRoom {
     display: flex;
     justify-content: space-between;
 }
 
-.people {
+.faces {
     display: flex;
+    width: 50%;
+    overflow-x: auto;
+    height: fit-content;
 }
 
 .personImage {
-    height: 200px;
+    width: 200px;
     border: 5px solid white;
     cursor: pointer;
 }
@@ -90,17 +106,43 @@ button.selectedMode {
     border: 5px solid red;
 }
 
-.roomImage {
-    height: 200px;
+.roomImageContainer {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.viewerWrapper {
+    height: 500px;
+    width: 500px;
+}
+
+#viewer {
+    width: 100%;
+    height: 100%;
+
 }
 
 @media (max-width: 1024px) {
-    .peopleAndRoom {
+    .facesAndRoom {
         flex-direction: column-reverse;
     }
 
-    .people {
-        overflow-x: auto;
+    .faces {
+        width: 100%;
+    }
+
+    .roomImageContainer {
+        width: 100%;
+        height: 500px;
+    }
+
+    .viewerWrapper {
+        width: 90%;
+        height: 100%;
     }
 }
 </style>
