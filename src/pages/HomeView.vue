@@ -57,7 +57,7 @@ export default {
         this.viewer = new Viewer({
             container: document.querySelector('#viewer'),
             panorama: '/rooms/' + this.facesAndRooms[this.currentPersonKey].roomImage,
-            minFov: 300,
+            maxFov: 300,
         });
     },
     methods: {
