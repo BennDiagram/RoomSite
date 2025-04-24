@@ -8,7 +8,8 @@
     <div class="facesAndRoom">
         <div class="faces">
             <div class="person" v-for="(person, key) in facesAndRoomsForGuessing">
-                <img :src="'/faces/' + person.personImage" class="personImage" @click="personClicked(key)" />
+                <img :src="'/faces/' + person.personImage" class="personImage"
+                    @click="personClicked(key, $event.target)" />
                 <div class="personName">{{ person.personName }}</div>
             </div>
         </div>
@@ -28,7 +29,7 @@ import { Viewer } from '@photo-sphere-viewer/core';
 export default {
     data() {
         return {
-            facesAndRooms: {...facesAndRoomsFromFile},
+            facesAndRooms: { ...facesAndRoomsFromFile },
             facesAndRoomsForGuessing: null,
             roomForGuessing: null,
             correctAnswerKey: null,
@@ -70,12 +71,21 @@ export default {
             const keys = Object.keys(obj);
             return keys[Math.floor(Math.random() * keys.length)];
         },
-        personClicked(key) {
+        personClicked(key, element) {
             this.totalGuesses++;
             if (key === this.correctAnswerKey) {
                 this.totalCorrectGuesses++;
                 delete this.facesAndRooms[key];
-                this.setNewRound();
+                element.classList.add('correctGuess');
+                setTimeout(() => {
+                    element.classList.remove('correctGuess')
+                    this.setNewRound();
+                }, 1000)
+            } else {
+                element.classList.add('incorrectGuess');
+                setTimeout(() => {
+                    element.classList.remove('incorrectGuess')
+                }, 1000)
             }
         },
         startOver() {
@@ -90,7 +100,9 @@ export default {
 </script>
 
 <style scoped>
-.youWin,.score,.remainingRooms {
+.youWin,
+.score,
+.remainingRooms {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -116,12 +128,28 @@ export default {
     height: fit-content;
     align-items: center;
     padding: 2%;
+    flex-wrap: wrap;
+    transition: all .3s;
+}
+
+.person {
+    flex: 0 0 25%;
+    box-sizing: border-box;
 }
 
 .personImage {
     width: 200px;
     border: 5px solid white;
     cursor: pointer;
+    transition: all .3s;
+}
+
+.personImage.correctGuess {
+    border: 5px solid green;
+}
+
+.personImage.incorrectGuess {
+    border: 5px solid red;
 }
 
 .personName {

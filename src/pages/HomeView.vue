@@ -11,10 +11,10 @@
         </div>
         <div class="aboutBedrooms">
             <p>
-            Someone once said that "the eyes are the window of the soul." Clearly,
-            they had never stepped inside a bedroom. <i>Bedrooms</i> is a portrait photography project
-            that explores identity through a new lens (two fisheye lenses, to be exact). <br><br> Using a 
-            Garmin Virb 360 and a Panasonic Lumix GH5, each 360˚ photo captures the...
+                Someone once said that "the eyes are the window of the soul." Clearly,
+                they had never stepped inside a bedroom. <i>Bedrooms</i> is a portrait photography project
+                that explores identity through a new lens (two fisheye lenses, to be exact). <br><br> Using a
+                Garmin Virb 360 and a Panasonic Lumix GH5, each 360˚ photo captures the...
             </p>
         </div>
         <Exhibit v-if="mode === 'exhibit'"></Exhibit>
@@ -46,11 +46,11 @@ export default {
 </script>
 
 <style scoped>
-
 @font-face {
-  font-family: inter;
-  src: url('../assets/inter/InterVariable.woff2')  format('truetype');
+    font-family: inter;
+    src: url('../assets/inter/InterVariable.woff2') format('truetype');
 }
+
 .pageContainer {
     height: 100%;
     width: 100%;

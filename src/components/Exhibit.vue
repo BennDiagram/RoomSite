@@ -87,7 +87,7 @@ export default {
 }
 
 .personImage.current {
-    border: 5px solid red;
+    border: 5px solid green;
 }
 
 .room {
