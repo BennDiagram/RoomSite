@@ -57,6 +57,7 @@ export default {
         this.viewer = new Viewer({
             container: document.querySelector('#viewer'),
             panorama: '/rooms/' + this.facesAndRooms[this.currentPersonKey].roomImage,
+            minFov: 300,
         });
     },
     methods: {
@@ -149,7 +150,6 @@ button.selectedMode {
     overflow-x: auto;
     height: fit-content;
     align-items: center;
-    justify-content: center;
     padding: 2%;
 }
 
