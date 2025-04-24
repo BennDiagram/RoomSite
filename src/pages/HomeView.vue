@@ -1,13 +1,13 @@
 <template>
     <div class="pageContainer">
         <div class="topBar">
-            <div class = "logo">Bedrooms</div>
-            <div class = "modes"><p>Mode:</p>
+            <div class="logo">Bedrooms</div>
+            <div class="modes">
+                <p>Mode:</p>
                 <button @click="startInteractiveMode"
                     :class="{ 'selectedMode': mode === 'interactive' }">Interactive</button>
                 <button @click="startExhibitMode" :class="{ 'selectedMode': mode === 'exhibit' }">Exhibit</button>
             </div>
-            <div v-if="mode === 'interactive'">Score: TODO/TODO</div>
         </div>
         <div class="aboutBedrooms">
             <p>
@@ -17,61 +17,31 @@
             Garmin Virb 360 and a Panasonic Lumix GH5, each 360˚ photo captures the...
             </p>
         </div>
-        <div class="about">{{ facesAndRooms[currentPersonKey].about }}</div>
-        <div class="facesAndRoom">
-            <div class="faces">
-                <div class="person" v-for="(person, key) in facesAndRooms">
-                    <img :src="'/faces/' + person.personImage" class="personImage" @click="personClicked(key)"
-                        :class="{ 'current': key === currentPersonKey }" />
-                    <div class="personName">{{ person.personName }}</div>
-                </div>
-            </div>
-            <div class="roomImageContainer">
-                <div class="viewerWrapper">
-                    <div id="viewer"></div>
-                </div>
-                <div>{{ facesAndRooms[currentPersonKey].personName }}'s Room</div>
-            </div>
-        </div>
+        <Exhibit v-if="mode === 'exhibit'"></Exhibit>
+        <Interactive v-if="mode === 'interactive'"></Interactive>
     </div>
 </template>
 
 <script>
-import '@photo-sphere-viewer/core/index.css';
-import facesAndRooms from '../assets/facesAndRooms.json'
-import { Viewer } from '@photo-sphere-viewer/core';
+import Exhibit from '@/components/Exhibit.vue';
+import Interactive from '@/components/Interactive.vue';
 
 export default {
     data() {
         return {
-            facesAndRooms: facesAndRooms,
             mode: 'exhibit',
-            currentPersonKey: (Object.keys(facesAndRooms)[0]) ? Object.keys(facesAndRooms)[0] : null,
-            viewer: null
         }
     },
-    mounted() {
-        console.dir(facesAndRooms);
-        this.viewer = new Viewer({
-            container: document.querySelector('#viewer'),
-            panorama: '/rooms/' + this.facesAndRooms[this.currentPersonKey].roomImage,
-            maxFov: 300,
-        });
-    },
+    mounted() { },
     methods: {
         startInteractiveMode() {
-            alert("Let's just focus on exhibit mode for now");
+            this.mode = 'interactive';
         },
         startExhibitMode() {
-            alert("These buttons don't do anything right now. We're locked into exhibit mode")
+            this.mode = 'exhibit';
         },
-        personClicked(key) {
-            this.currentPersonKey = key;
-            if (this.viewer) {
-                this.viewer.setPanorama('/rooms/' + this.facesAndRooms[key].roomImage);
-            }
-        }
-    }
+    },
+    components: { Exhibit, Interactive }
 }
 </script>
 
@@ -97,22 +67,24 @@ export default {
     padding: 2%;
 }
 
-.logo { 
-  font-size: 8cqi;
-  font-family: inter;
-  font-weight:900;
-  text-transform: uppercase;
+.logo {
+    font-size: 8cqi;
+    font-family: inter;
+    font-weight: 900;
+    text-transform: uppercase;
 }
 
 .modes {
-  display: flex;
-  align-items: center;
-  font-family: inter;
-  font-weight: 700;
+    display: flex;
+    align-items: center;
+    font-family: inter;
+    font-weight: 700;
 }
-.modes p { 
+
+.modes p {
     padding-right: 5%;
 }
+
 .aboutBedrooms {
     display: flex;
     justify-content: center;
@@ -121,7 +93,7 @@ export default {
     font-family: inter;
 }
 
-.aboutBedrooms p { 
+.aboutBedrooms p {
     align-items: center;
     max-width: 600px;
     text-align: justify;
@@ -130,7 +102,7 @@ export default {
     margin: 0;
 }
 
-.about { 
+.about {
     padding: 2% 7% 4%;
     font-family: inter;
     font-weight: 400;
@@ -165,14 +137,14 @@ button.selectedMode {
 .personName {
     font-family: inter;
     text-align: center;
-    color:black;
+    color: black;
 }
 
 .personImage.current {
     border: 5px solid red;
 }
 
-.room{
+.room {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -183,13 +155,16 @@ button.selectedMode {
     font-weight: 700;
     text-transform: uppercase;
 }
+
 .roomName {
     text-align: center;
     padding: 0 0 4%;
 }
+
 .roomImage {
     height: 70cqw;
 }
+
 .roomImageContainer {
     width: 50%;
     height: 100%;
