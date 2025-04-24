@@ -13,10 +13,8 @@
             <p>
             Someone once said that "the eyes are the window of the soul." Clearly,
             they had never stepped inside a bedroom. <i>Bedrooms</i> is a portrait photography project
-            that explores identity through a new lens. <br><br> Using a 
-            Garmin Virb 360 and a Panasonic Lumix G5, each 360˚ bedroom  
-            of each subject's bedroom. Users can navigate these images in 3D by clicking and dragging on each
-            image.
+            that explores identity through a new lens (two fisheye lenses, to be exact). <br><br> Using a 
+            Garmin Virb 360 and a Panasonic Lumix GH5, each 360˚ photo captures the...
             </p>
         </div>
         <div class="about">{{ facesAndRooms[currentPersonKey].about }}</div>
@@ -78,6 +76,11 @@ export default {
 </script>
 
 <style scoped>
+
+@font-face {
+  font-family: inter;
+  src: url('../assets/inter/InterVariable.woff2')  format('truetype');
+}
 .pageContainer {
     height: 100%;
     width: 100%;
