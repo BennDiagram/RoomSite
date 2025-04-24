@@ -1,13 +1,23 @@
 <template>
     <div class="pageContainer">
         <div class="topBar">
-            <div>Bedrooms</div>
-            <div>Mode:
+            <div class = "logo">Bedrooms</div>
+            <div class = "modes"><p>Mode:</p>
                 <button @click="startInteractiveMode"
                     :class="{ 'selectedMode': mode === 'interactive' }">Interactive</button>
                 <button @click="startExhibitMode" :class="{ 'selectedMode': mode === 'exhibit' }">Exhibit</button>
             </div>
             <div v-if="mode === 'interactive'">Score: TODO/TODO</div>
+        </div>
+        <div class="aboutBedrooms">
+            <p>
+            Someone once said that "the eyes are the window of the soul." Clearly,
+            they had never stepped inside a bedroom. <i>Bedrooms</i> is a portrait photography project
+            that explores identity through a new lens. <br><br> Using a 
+            Garmin Virb 360 and a Panasonic Lumix G5, each 360˚ bedroom  
+            of each subject's bedroom. Users can navigate these images in 3D by clicking and dragging on each
+            image.
+            </p>
         </div>
         <div class="about">{{ facesAndRooms[currentPersonKey].about }}</div>
         <div class="facesAndRoom">
@@ -78,10 +88,54 @@ export default {
 .topBar {
     display: flex;
     justify-content: space-between;
+    height: 9cqi;
+    container-type: inline-size;
+    padding: 2%;
+}
+
+.logo { 
+  font-size: 8cqi;
+  font-family: inter;
+  font-weight:900;
+  text-transform: uppercase;
+}
+
+.modes {
+  display: flex;
+  align-items: center;
+  font-family: inter;
+  font-weight: 700;
+}
+.modes p { 
+    padding-right: 5%;
+}
+.aboutBedrooms {
+    display: flex;
+    justify-content: center;
+    padding: 2% 7%;
+    font-size: 1.3rem;
+    font-family: inter;
+}
+
+.aboutBedrooms p { 
+    align-items: center;
+    max-width: 600px;
+    text-align: justify;
+    hyphens: auto;
+    padding: 0;
+    margin: 0;
+}
+
+.about { 
+    padding: 2% 7% 4%;
+    font-family: inter;
+    font-weight: 400;
 }
 
 button.selectedMode {
-    border: 5px solid green;
+    color: white;
+    background-color: rgb(89, 152, 89);
+    /* border: rgb(89,152,89); */
 }
 
 .facesAndRoom {
@@ -94,6 +148,9 @@ button.selectedMode {
     width: 50%;
     overflow-x: auto;
     height: fit-content;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
 }
 
 .personImage {
@@ -102,10 +159,34 @@ button.selectedMode {
     cursor: pointer;
 }
 
+.personName {
+    font-family: inter;
+    text-align: center;
+    color:black;
+}
+
 .personImage.current {
     border: 5px solid red;
 }
 
+.room{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    container-type: inline-size;
+    padding: 2%;
+    font-family: inter;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.roomName {
+    text-align: center;
+    padding: 0 0 4%;
+}
+.roomImage {
+    height: 70cqw;
+}
 .roomImageContainer {
     width: 50%;
     height: 100%;
