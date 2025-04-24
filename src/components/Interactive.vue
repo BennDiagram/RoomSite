@@ -1,6 +1,7 @@
 <template>
     <div class="score">Accuracy: {{ this.totalCorrectGuesses + '/' + this.totalGuesses }}</div>
-    <div class="youWin">
+    <div class="remainingRooms">remainingRooms = {{ Object.keys(facesAndRooms).length }}</div>
+    <div class="youWin" v-if="win">
         <div>YOU WIN!!!</div>
         <button @click="startOver()">Play Again</button>
     </div>
@@ -21,19 +22,18 @@
 
 <script>
 import '@photo-sphere-viewer/core/index.css';
-import facesAndRooms from '../assets/facesAndRooms.json'
+import facesAndRoomsFromFile from '../assets/facesAndRooms.json'
 import { Viewer } from '@photo-sphere-viewer/core';
 
 export default {
     data() {
         return {
-            facesAndRooms: facesAndRooms,
+            facesAndRooms: {...facesAndRoomsFromFile},
             facesAndRoomsForGuessing: null,
             roomForGuessing: null,
             correctAnswerKey: null,
             totalGuesses: 0,
             totalCorrectGuesses: 0,
-            totalCorrectPercentage: null,
             viewer: null,
             win: false
         }
@@ -74,17 +74,15 @@ export default {
             this.totalGuesses++;
             if (key === this.correctAnswerKey) {
                 this.totalCorrectGuesses++;
-                this.totalCorrectPercentage = (this.totalCorrectGuesses / this.totalGuesses) * 100 + '%';
-                delete facesAndRooms[key];
+                delete this.facesAndRooms[key];
                 this.setNewRound();
-            } else {
-                this.totalCorrectPercentage = (this.totalCorrectGuesses / this.totalGuesses) * 100 + '%';
             }
         },
         startOver() {
-            this.facesAndRooms = facesAndRooms;
+            this.facesAndRooms = facesAndRoomsFromFile;
             this.win = false;
-            this.total
+            this.totalCorrectGuesses = 0;
+            this.totalGuesses = 0;
             this.setNewRound();
         }
     }
@@ -92,7 +90,7 @@ export default {
 </script>
 
 <style scoped>
-.youWin,.score {
+.youWin,.score,.remainingRooms {
     width: 100%;
     display: flex;
     justify-content: center;
