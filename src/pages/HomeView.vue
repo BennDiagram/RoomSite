@@ -11,7 +11,7 @@
         </div>
         <div class="aboutBedrooms">
             <p>
-                Someone once said that "the eyes are the window of the soul." Clearly,
+                Someone once said that "eyes are the windows to the soul." Clearly,
                 they had never stepped inside a bedroom. <i>Bedrooms</i> is a portrait photography project
                 that explores identity through a new lens (two fisheye lenses, to be exact). <br><br> Using a
                 Garmin Virb 360 and a Panasonic Lumix GH5, each 360˚ photo captures the...
