@@ -107,11 +107,9 @@
         "roomImage": "Sam.JPG",
         "about": "This text can be modified in src/assets/facesAndRooms.json. The images have to be added to public/faces or public/rooms"
     },
-
-    "bathroomTime2": {
-        "personName": "Bathroom Time 2",
-        "personImage": "P1000234.JPG",
-        "roomImage": "V2670324.JPG",
-        "about": "This text can be modified in src/assets/facesAndRooms.json. The images have to be added to public/faces or public/rooms"
+    "ben": {
+        "personName": "Ben",
+        "personImage": "Ben.jpg",
+        "roomImage": "Ben.jpeg"
     }
 }
