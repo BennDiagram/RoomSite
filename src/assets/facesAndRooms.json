@@ -111,5 +111,35 @@
         "personName": "Ben",
         "personImage": "Ben.jpg",
         "roomImage": "Ben.jpeg"
+    },
+    "emeline": {
+        "personName": "Emeline",
+        "personImage": "Emeline.JPG",
+        "roomImage": "Emeline.JPG"
+    },
+    "jose": {
+        "personName": "Jose",
+        "personImage": "Jose.JPG",
+        "roomImage": "Jose.JPG"
+    },
+    "karthik": {
+        "personName": "Karthik",
+        "personImage": "Karthik.JPG",
+        "roomImage": "Karthik.JPG"
+    },
+    "michael": {
+        "personName": "Michael",
+        "personImage": "Michael.JPG",
+        "roomImage": "Michael.JPG"
+    },
+    "ramsey": {
+        "personName": "Ramsey",
+        "personImage": "Ramsey.JPG",
+        "roomImage": "Ramsey.JPG"
+    },
+    "sage": {
+        "personName": "Sage",
+        "personImage": "Sage.JPG",
+        "roomImage": "Sage.JPG"
     }
 }
