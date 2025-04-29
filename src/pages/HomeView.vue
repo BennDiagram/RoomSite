@@ -11,10 +11,12 @@
         </div>
         <div class="aboutBedrooms">
             <p>
-                Someone once said that "eyes are the windows to the soul." Clearly,
-                they had never stepped inside a bedroom. <i>Bedrooms</i> is a portrait photography project
+                Someone once said that "the eyes are the windows to the soul." Clearly,
+                they had never stepped foot in a bedroom. <i>Bedrooms</i> is a portrait photography project
                 that explores identity through a new lens (two fisheye lenses, to be exact). <br><br> Using a
-                Garmin Virb 360 and a Panasonic Lumix GH5, each 360˚ photo captures the...
+                Garmin Virb 360 and a Panasonic Lumix GH5, <i>Bedrooms</i> captures people alongside their most 
+                intimate spaces. View each room by its occupant in <b>Exhibit</b> mode, or guess which room
+                belongs to which person in <b>Interactive</b> mode.
             </p>
         </div>
         <Exhibit v-if="mode === 'exhibit'"></Exhibit>
@@ -117,6 +119,7 @@ button.selectedMode {
 .facesAndRoom {
     display: flex;
     justify-content: space-between;
+    padding: 2%;
 }
 
 .faces {
@@ -125,7 +128,6 @@ button.selectedMode {
     overflow-x: auto;
     height: fit-content;
     align-items: center;
-    padding: 2%;
 }
 
 .personImage {

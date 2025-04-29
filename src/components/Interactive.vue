@@ -121,6 +121,8 @@ export default {
 .facesAndRoom {
     display: flex;
     justify-content: space-between;
+    padding: 2%;
+    container-type: inline-size;
 }
 
 .faces {
@@ -129,7 +131,6 @@ export default {
     overflow-x: auto;
     height: fit-content;
     align-items: center;
-    padding: 2%;
     flex-wrap: wrap;
     transition: all .3s;
 }
@@ -157,7 +158,7 @@ export default {
 .personName {
     font-family: inter;
     text-align: center;
-    color: black;
+    color: white;
 }
 
 .personImage.current {
@@ -183,6 +184,7 @@ export default {
 
 .roomImage {
     height: 70cqw;
+
 }
 
 .roomImageContainer {
@@ -192,11 +194,12 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    container-type: inline-size;
 }
 
 .viewerWrapper {
-    height: 500px;
-    width: 500px;
+    height: 60cqh;
+    width: 100cqw;
 }
 
 #viewer {
