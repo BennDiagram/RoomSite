@@ -78,8 +78,10 @@ export default {
                 delete this.facesAndRooms[key];
                 element.classList.add('correctGuess');
                 setTimeout(() => {
-                    element.classList.remove('correctGuess')
-                    this.setNewRound();
+                    element.classList.remove('correctGuess');
+                    setTimeout(() => {
+                        this.setNewRound();
+                    }, 100)
                 }, 1000)
             } else {
                 element.classList.add('incorrectGuess');

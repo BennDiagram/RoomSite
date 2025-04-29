@@ -1,5 +1,4 @@
 <template>
-    <div class="about">{{ facesAndRooms[currentPersonKey].about }}</div>
     <div class="facesAndRoom">
         <div class="faces">
             <div class="person" v-for="(person, key) in facesAndRooms">
