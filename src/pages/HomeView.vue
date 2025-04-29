@@ -11,11 +11,14 @@
         </div>
         <div class="aboutBedrooms">
             <p>
-                Someone once said that "the eyes are the windows to the soul." Clearly,
-                they had never stepped foot in a bedroom. <i>Bedrooms</i> is a portrait photography project
-                that explores identity through a new lens (two fisheye lenses, to be exact). <br><br> Using a
-                Garmin Virb 360 and a Panasonic Lumix GH5, <i>Bedrooms</i> captures people alongside their most 
-                intimate spaces. View each room by its occupant in <b>Exhibit</b> mode, or guess which room
+                <i>Someone once said that "the eyes are the windows to the soul." Clearly,
+                they had never stepped foot inside a bedroom.</i> <br><br> 
+                <i>Bedrooms</i> is a portrait photography project
+                that explores identity through a new lens (two fisheye lenses, to be exact).
+                Using a 
+                <a href="https://www.garmin.com/en-US/p/562010" target="_blank" style= "color: white;">Garmin Virb 360</a> 
+                and a <a href="" target="_blank" style= "color: white;">Panasonic Lumix G5</a>, <i>Bedrooms</i> captures people alongside their most 
+                intimate spaces. View each room and its occupant in <b>Exhibit</b> mode, or guess which room
                 belongs to which person in <b>Interactive</b> mode.
             </p>
         </div>
